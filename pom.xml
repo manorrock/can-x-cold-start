@@ -37,5 +37,6 @@
     </build>
     <modules>
         <module>javase</module>
+        <module>springboot-tomcat</module>
     </modules>
 </project>
