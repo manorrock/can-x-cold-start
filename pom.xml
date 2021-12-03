@@ -23,6 +23,11 @@
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.2.0</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -37,6 +42,10 @@
     </build>
     <modules>
         <module>javase</module>
+        <module>springboot-jetty</module>
         <module>springboot-tomcat</module>
     </modules>
+    <properties>
+        <springboot.version>2.5.6</springboot.version>
+    </properties>
 </project>
