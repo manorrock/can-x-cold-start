@@ -43,6 +43,7 @@
     <modules>
         <module>javase</module>
         <module>springboot-jetty</module>
+        <module>springboot-netty</module>
         <module>springboot-tomcat</module>
     </modules>
     <properties>
