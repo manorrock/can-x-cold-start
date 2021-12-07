@@ -45,6 +45,7 @@
         <module>springboot-jetty</module>
         <module>springboot-netty</module>
         <module>springboot-tomcat</module>
+        <module>springboot-undertow</module>
     </modules>
     <properties>
         <springboot.version>2.5.6</springboot.version>

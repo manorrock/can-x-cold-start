@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * A Spring Boot Tomcat cold start example.
+ * A Spring Boot Jetty cold start example.
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */

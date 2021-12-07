@@ -1,4 +1,4 @@
-package coldstart.springboot.tomcat;
+package coldstart.springboot.undertow;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,12 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * A Spring Boot Tomcat cold start example.
+ * A Spring Boot Undertow cold start example.
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @SpringBootApplication
-public class SpringBootTomcatApplication {
+public class SpringBootUndertowApplication {
 
     /**
      * Filename to store the results in.
@@ -42,7 +42,7 @@ public class SpringBootTomcatApplication {
     public static void main(String[] arguments) {
         time1 = System.currentTimeMillis();
         outputFilename = arguments[0];
-        SpringApplication.run(SpringBootTomcatApplication.class, arguments);
+        SpringApplication.run(SpringBootUndertowApplication.class, arguments);
     }
 
     /**
