@@ -35,7 +35,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
         </plugins>
@@ -46,8 +46,10 @@
         <module>springboot-netty</module>
         <module>springboot-tomcat</module>
         <module>springboot-undertow</module>
+        <module>wildfly</module>
     </modules>
     <properties>
+        <java.version>17</java.version>
         <springboot.version>2.5.6</springboot.version>
     </properties>
 </project>
