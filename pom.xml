@@ -42,6 +42,7 @@
     </build>
     <modules>
         <module>javase</module>
+        <module>quarkus</module>
         <module>springboot-jetty</module>
         <module>springboot-netty</module>
         <module>springboot-tomcat</module>
