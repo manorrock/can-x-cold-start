@@ -47,6 +47,7 @@
         <module>springboot-netty</module>
         <module>springboot-tomcat</module>
         <module>springboot-undertow</module>
+        <module>tomcat</module>
         <module>wildfly</module>
     </modules>
     <properties>
