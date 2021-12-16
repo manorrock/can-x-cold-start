@@ -42,6 +42,7 @@
     </build>
     <modules>
         <module>javase</module>
+        <module>piranha-embedded</module>
         <module>piranha-nano</module>
         <module>quarkus</module>
         <module>springboot-jetty</module>
