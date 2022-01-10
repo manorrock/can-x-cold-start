@@ -16,6 +16,7 @@ public class QuarkusHelloWorldResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         QuarkusHelloWorldBean.time3 = System.currentTimeMillis();
+        QuarkusHelloWorldBean.writeResults();
         return "Hello World";
     }
 }
