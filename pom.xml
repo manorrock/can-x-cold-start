@@ -41,6 +41,7 @@
         </plugins>
     </build>
     <modules>
+        <module>helidon</module>
         <module>javase</module>
         <module>micronaut</module>
         <module>piranha-embedded</module>
