@@ -41,6 +41,7 @@
         </plugins>
     </build>
     <modules>
+        <module>glassfish</module>
         <module>helidon</module>
         <module>javase</module>
         <module>micronaut</module>
