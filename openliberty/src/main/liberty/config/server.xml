@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server description="defaultServer">
+    <featureManager>
+         <feature>servlet-4.0</feature>
+    </featureManager>
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="8080"/>
+    <applicationManager autoExpand="true"/>
+</server>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+        <parent>
+        <groupId>coldstart</groupId>
+        <artifactId>project</artifactId>
+        <version>1-SNAPSHOT</version>
+    </parent>
+    <artifactId>coldstart-openliberty</artifactId>
+    <packaging>war</packaging>
+    <name>OpenLiberty</name>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <liberty.var.default.http.port>8080</liberty.var.default.http.port>
+        <liberty.var.default.https.port>8443</liberty.var.default.https.port>
+        <liberty.var.app.context.root>helloworld</liberty.var.app.context.root>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>8.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <!-- mvn package liberty:create liberty:install-feature liberty:deploy liberty:package -Dinclude=minify,runnable -->
+    <build>
+        <finalName>coldstart-openliberty</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.openliberty.tools</groupId>
+                    <artifactId>liberty-maven-plugin</artifactId>
+                    <version>3.3.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>io.openliberty.tools</groupId>
+                <artifactId>liberty-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
