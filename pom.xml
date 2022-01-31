@@ -42,6 +42,7 @@
     </build>
     <modules>
         <module>glassfish</module>
+        <module>graalvm</module>
         <module>helidon</module>
         <module>invernoio</module>
         <module>javase</module>
