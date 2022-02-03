@@ -53,6 +53,7 @@
         <module>piranha-micro</module>
         <module>piranha-nano</module>
         <module>piranha-server</module>
+        <module>python</module>
         <module>quarkus</module>
         <module>springboot-jetty</module>
         <module>springboot-netty</module>

@@ -7,7 +7,7 @@
         <version>1-SNAPSHOT</version>
     </parent>
     <groupId>coldstart</groupId>
-    <artifactId>coldstart-nodejs</artifactId>
+    <artifactId>coldstart-python</artifactId>
     <packaging>pom</packaging>
-    <name>NodeJS</name>
+    <name>Python</name>
 </project>
