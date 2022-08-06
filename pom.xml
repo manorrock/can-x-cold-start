@@ -40,6 +40,13 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+    </dependencies>
     <modules>
         <module>glassfish</module>
         <module>go</module>

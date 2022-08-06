@@ -1,12 +1,14 @@
 package coldstart.javase;
 
+import coldstart.shared.JobMeasurement;
+import coldstart.shared.JobMetadata;
+import coldstart.shared.JobStatistics;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 
 /**
@@ -17,10 +19,10 @@ import java.net.InetSocketAddress;
 public class JavaSE {
 
     /**
-     * Filename to store the results in.
+     * Time 0 - Time before starting Java process.
      */
-    private static String outputFilename;
-
+    private static long time0;
+    
     /**
      * Time 1 - Entering user code timestamp.
      */
@@ -43,8 +45,8 @@ public class JavaSE {
      * @throws Exception when a serious error occurs.
      */
     public static void main(String[] arguments) throws Exception {
+        time0 = Long.valueOf(arguments[0]);
         time1 = System.currentTimeMillis();
-        outputFilename = arguments[0];
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/helloworld", new JavaSEHandler());
         server.setExecutor(null);
@@ -65,11 +67,17 @@ public class JavaSE {
                 os.write(response.getBytes());
             }
             time3 = System.currentTimeMillis();
-            try ( PrintWriter writer = new PrintWriter(new FileWriter(outputFilename, true))) {
-                writer.println(time1);
-                writer.println(time2);
-                writer.println(time3);
-            }
+            
+            JobStatistics statistics = new JobStatistics();
+            JobMetadata metadata = new JobMetadata();
+            metadata.setName("startup");
+            statistics.getMetadata().add(metadata);
+            JobMeasurement measurement = new JobMeasurement();
+            measurement.setName("startup");
+            statistics.getMeasurements().add(measurement);
+            
+            ObjectMapper mapper = new ObjectMapper();
+            System.out.println(mapper.writeValueAsString(statistics));
         }
     }
 }
