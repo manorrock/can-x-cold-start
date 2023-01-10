@@ -8,7 +8,7 @@
     </parent>
     <artifactId>coldstart-glassfish</artifactId>
     <packaging>war</packaging>
-    <name>Glassfish</name>
+    <name>glassfish</name>
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
