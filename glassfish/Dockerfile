@@ -8,5 +8,5 @@ RUN export GLASSFISH_VERSION=7.0.0 && \
     rm glassfish.zip && \
     mv glassfish7 glassfish
 EXPOSE 8080
-COPY target/glassfish.war /opt/glassfish/glassfish/domains/domain1/autodeploy/ROOT.war
+COPY target/coldstart-glassfish.war /opt/glassfish/glassfish/domains/domain1/autodeploy/ROOT.war
 CMD ["/opt/glassfish/glassfish/bin/asadmin", "start-domain", "-v"]
