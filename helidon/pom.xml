@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
     <name>Helidon</name>
     <properties>
-        <helidon.version>2.3.4</helidon.version>
+        <helidon.version>3.0.2</helidon.version>
         <mainClass>example.example30.Main</mainClass>
     </properties>
     <dependencyManagement>
@@ -20,7 +20,7 @@
             <dependency>
                 <groupId>io.helidon.applications</groupId>
                 <artifactId>helidon-se</artifactId>
-                <version>${helidon.version}</version>
+                <version>3.0.2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

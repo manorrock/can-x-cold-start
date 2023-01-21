@@ -41,7 +41,11 @@ public class SpringBootJettyApplication {
      */
     public static void main(String[] arguments) {
         time1 = System.currentTimeMillis();
-        outputFilename = arguments[0];
+        if (arguments.length > 0) {
+            outputFilename = arguments[0];
+        } else {
+            outputFilename = "/mnt/output.txt";
+        }
         SpringApplication.run(SpringBootJettyApplication.class, arguments);
     }
 

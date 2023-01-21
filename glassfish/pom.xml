@@ -13,7 +13,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
+            <version>${jakarta.jakartaee-api.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
