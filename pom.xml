@@ -79,5 +79,6 @@
         <module>tomcat</module>
         <module>vertx</module>
         <module>wildfly</module>
+        <module>test-harness</module>
     </modules>
 </project>
