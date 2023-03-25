@@ -1,9 +1,6 @@
 package coldstart.javase;
 
-import coldstart.shared.JobMeasurement;
-import coldstart.shared.JobMetadata;
-import coldstart.shared.JobStatistics;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import coldstart.shared.Collector;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -19,39 +16,20 @@ import java.net.InetSocketAddress;
 public class JavaSE {
 
     /**
-     * Time 0 - Time before starting Java process.
-     */
-    private static long time0;
-    
-    /**
-     * Time 1 - Entering user code timestamp.
-     */
-    private static long time1;
-
-    /**
-     * Time 2 - Ready for processing timestamp.
-     */
-    private static long time2;
-
-    /**
-     * Time 3 - 1st request server side completed timestamp.
-     */
-    private static long time3;
-
-    /**
      * Main method.
      * 
      * @param arguments the command line arguments.
      * @throws Exception when a serious error occurs.
      */
     public static void main(String[] arguments) throws Exception {
-        time0 = Long.valueOf(arguments[0]);
-        time1 = System.currentTimeMillis();
+        Collector.csvFilename = arguments[0];
+        Collector.time0 = Long.parseLong(arguments[1]);
+        Collector.time1 = System.currentTimeMillis();
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/helloworld", new JavaSEHandler());
         server.setExecutor(null);
         server.start();
-        time2 = System.currentTimeMillis();
+        Collector.time2 = System.currentTimeMillis();
     }
 
     /**
@@ -66,18 +44,9 @@ public class JavaSE {
             try ( OutputStream os = t.getResponseBody()) {
                 os.write(response.getBytes());
             }
-            time3 = System.currentTimeMillis();
-            
-            JobStatistics statistics = new JobStatistics();
-            JobMetadata metadata = new JobMetadata();
-            metadata.setName("startup");
-            statistics.getMetadata().add(metadata);
-            JobMeasurement measurement = new JobMeasurement();
-            measurement.setName("startup");
-            statistics.getMeasurements().add(measurement);
-            
-            ObjectMapper mapper = new ObjectMapper();
-            System.out.println(mapper.writeValueAsString(statistics));
+            Collector.time3 = System.currentTimeMillis();
+            Collector.writeResults();
+            System.exit(0);
         }
     }
 }
