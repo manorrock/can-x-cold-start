@@ -79,6 +79,12 @@
     </build>
     <dependencies>
         <dependency>
+            <groupId>coldstart</groupId>
+            <artifactId>coldstart-shared</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>        
+        <dependency>
             <groupId>cloud.piranha.http</groupId>
             <artifactId>piranha-http-impl</artifactId>
             <version>${piranha.version}</version>

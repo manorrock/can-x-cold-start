@@ -1,5 +1,6 @@
 package coldstart.piranha.embedded;
 
+import coldstart.shared.Collector;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -19,7 +20,8 @@ public class PiranhaEmbeddedHelloWorldServlet extends HttpServlet {
             writer.println("Hello World");
             writer.flush();
         }
-        PiranhaEmbeddedHelloWorld.time3 = System.currentTimeMillis();
-        PiranhaEmbeddedHelloWorld.writeResults();
+        Collector.time3 = System.currentTimeMillis();
+        Collector.writeResults();
+        System.exit(0);
     }
 }

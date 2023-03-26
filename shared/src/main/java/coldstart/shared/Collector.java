@@ -58,6 +58,7 @@ public class Collector {
                 writer.print(",");
                 writer.println((time3 - time0));
                 writer.flush();
+                writer.close();
             }
         } catch (FileNotFoundException fne) {
             fne.printStackTrace();
