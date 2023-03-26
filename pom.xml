@@ -62,6 +62,7 @@
         <module>helidon</module>
         <module>invernoio</module>
         <module>javase</module>
+        <module>jshell</module>
         <module>micronaut</module>
         <module>nodejs</module>
         <module>openliberty</module>
