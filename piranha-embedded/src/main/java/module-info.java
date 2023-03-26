@@ -2,6 +2,7 @@
 module coldstart.piranha.embedded {
 
     exports coldstart.piranha.embedded;
+    requires coldstart.shared;
     requires cloud.piranha.http.api;
     requires cloud.piranha.http.impl;
     requires cloud.piranha.http.webapp;

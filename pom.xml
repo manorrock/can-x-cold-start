@@ -68,7 +68,6 @@
         <module>openliberty</module>
         <module>piranha-embedded</module>
         <module>piranha-micro</module>
-        <module>piranha-nano</module>
         <module>piranha-server</module>
         <module>python</module>
         <module>quarkus</module>
