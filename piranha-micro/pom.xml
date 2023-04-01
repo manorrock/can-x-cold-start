@@ -15,14 +15,19 @@
     <name>Piranha Micro</name>
     <dependencies>
         <dependency>
+            <groupId>coldstart</groupId>
+            <artifactId>coldstart-shared</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>        
+        <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
-       <finalName>coldstart-piranha-micro</finalName>
+        <finalName>coldstart-piranha-micro</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

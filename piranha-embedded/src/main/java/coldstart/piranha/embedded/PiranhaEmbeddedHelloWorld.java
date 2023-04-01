@@ -15,7 +15,7 @@ public class PiranhaEmbeddedHelloWorld {
         
         EmbeddedPiranha piranha = new EmbeddedPiranhaBuilder()
                 .servlet("HelloWorld", PiranhaEmbeddedHelloWorldServlet.class)
-                .servletMapping("HelloWorld", "/helloworld")
+                .servletMapping("HelloWorld", "")
                 .buildAndStart();
 
         DefaultHttpServer server = new DefaultHttpServer(8000,

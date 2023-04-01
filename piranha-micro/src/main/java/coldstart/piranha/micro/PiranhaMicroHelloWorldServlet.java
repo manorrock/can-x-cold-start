@@ -1,5 +1,6 @@
 package coldstart.piranha.micro;
 
+import coldstart.shared.Collector;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -12,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class PiranhaMicroHelloWorldServlet extends HttpServlet {
     
     public PiranhaMicroHelloWorldServlet() {
-        PiranhaMicroHelloWorldServletContainerInitializer.time2 = System.currentTimeMillis();
+        Collector.time2 = System.currentTimeMillis();
     }
 
     @Override
@@ -22,7 +23,8 @@ public class PiranhaMicroHelloWorldServlet extends HttpServlet {
             writer.println("Hello World");
             writer.flush();
         }
-        PiranhaMicroHelloWorldServletContainerInitializer.time3 = System.currentTimeMillis();
-        PiranhaMicroHelloWorldServletContainerInitializer.writeResults();
+        Collector.time3 = System.currentTimeMillis();
+        Collector.writeResults();
+        System.exit(0);
     }
 }
