@@ -24,7 +24,7 @@ fi
 TIME0=`gdate +%s%3N`
 java -Dtime0=$TIME0 -DcsvFilename=$1 -jar piranha-micro.jar --war helloworld.war &
 while true; do
-  curl http://localhost:8000/helloworld
+  curl http://localhost:8080/
   if [[ $? == "0" ]]; then
     break
   fi
