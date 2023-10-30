@@ -53,9 +53,7 @@ public class HelloWorldServlet extends HttpServlet {
             @Override
             public void run() {
                 try ( PrintWriter writer = new PrintWriter(new FileWriter(outputFilename, true))) {
-                    writer.println(time1);
-                    writer.println(time2);
-                    writer.println(time3);
+                    writer.println(time1 + "," + time2 + "," + time3);
                 } catch (IOException ioe) {
                     // nothing to do here.
                 }
