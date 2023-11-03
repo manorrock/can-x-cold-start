@@ -8,11 +8,21 @@
     <artifactId>coldstart-wildfly</artifactId>
     <packaging>war</packaging>
     <name>WildFly</name>
+    <properties>
+        <!-- dependencies -->
+        <jakarta.version>10.0.0</jakarta.version>
+        <!-- other -->
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- plugins -->
+        <maven-compilter-plugin.version>3.11.0</maven-compilter-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
+            <version>${jakarta.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -21,15 +31,20 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compilter-plugin.version}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>${maven-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 </project>
